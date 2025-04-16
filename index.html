@@ -1,0 +1,111 @@
+<!-- filepath: c:\Users\micah\clickergame\index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Clicker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Clicker</h1>
+        <div class="stats">
+            <div class="compute-counter">
+                <span id="compute">0.0</span> compute units
+            </div>
+            <div class="cps-counter">
+                <span id="cps">0.0</span> compute per second
+            </div>
+            <div class="click-power-counter">
+                Click Power: <span id="click-power">1</span>
+            </div>
+        </div>
+        <p class="save-warning">Note: Game progress is saved in your browser's local storage and may be cleared.</p>
+
+        <div class="clicker-area">
+            <img id="ai-clicker" src="assets/ai.jpg" alt="AI Brain">
+            <!-- Add button to change image -->
+            <button id="change-ai-btn" class="change-image-btn">Change AI</button>
+            <p>Click to generate compute!</p>
+        </div>
+
+        <!-- Upgrade Tabs Container -->
+        <div class="upgrade-tabs">
+            <button id="show-cps-btn" class="tab-btn active">CPS Upgrades</button>
+            <button id="show-click-btn" class="tab-btn">Click Upgrades</button>
+        </div>
+
+        <!-- Upgrade Sections Container -->
+        <div class="upgrade-sections">
+            <!-- CPS Upgrades Section (Initially visible) -->
+            <div id="cps-upgrades-section" class="upgrades cps-upgrades">
+                <h2>Compute Per Second Upgrades</h2>
+                <div class="upgrade-item" id="basic-ai">
+                    <div>
+                        <h3>Basic AI</h3>
+                        <p>Generates 0.1 compute per second.</p>
+                    </div>
+                    <div class="upgrade-controls">
+                        <p>Cost: <span class="cost">15</span> compute</p>
+                        <button class="buy-btn buy-cps-btn">Buy</button>
+                        <span class="owned">0</span> owned
+                    </div>
+                </div>
+                <div class="upgrade-item" id="nlp-model">
+                     <div>
+                        <h3>NLP Model</h3>
+                        <p>Generates 1 compute per second.</p>
+                    </div>
+                    <div class="upgrade-controls">
+                        <p>Cost: <span class="cost">100</span> compute</p>
+                        <button class="buy-btn buy-cps-btn">Buy</button>
+                        <span class="owned">0</span> owned
+                    </div>
+                </div>
+                <div class="upgrade-item" id="vision-ai">
+                    <div>
+                        <h3>Vision AI</h3>
+                        <p>Generates 8 compute per second.</p>
+                    </div>
+                    <div class="upgrade-controls">
+                        <p>Cost: <span class="cost">1100</span> compute</p>
+                        <button class="buy-btn buy-cps-btn">Buy</button>
+                        <span class="owned">0</span> owned
+                    </div>
+                </div>
+            </div>
+
+            <!-- Click Upgrades Section (Initially hidden) -->
+            <div id="click-upgrades-section" class="upgrades click-upgrades hidden"> <!-- Added hidden class -->
+                <h2>Click Power Upgrades</h2>
+                <div class="upgrade-item" id="faster-processor">
+                    <div>
+                        <h3>Faster Processor</h3>
+                        <p>Increases compute per click by 1.</p>
+                    </div>
+                    <div class="upgrade-controls">
+                        <p>Cost: <span class="cost">50</span> compute</p>
+                        <button class="buy-btn buy-click-btn">Buy</button>
+                        <span class="owned">0</span> owned
+                    </div>
+                </div>
+                <div class="upgrade-item" id="optimized-algo">
+                    <div>
+                        <h3>Optimized Algorithm</h3>
+                        <p>Increases compute per click by 5.</p>
+                    </div>
+                    <div class="upgrade-controls">
+                        <p>Cost: <span class="cost">300</span> compute</p>
+                        <button class="buy-btn buy-click-btn">Buy</button>
+                        <span class="owned">0</span> owned
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End Upgrade Sections Container -->
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

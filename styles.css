@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Subtle background gradient animation */
+@keyframes backgroundShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    /* Darker gradient background */
+    background: linear-gradient(270deg, #1a1a2e, #16213e, #0f3460);
+    background-size: 600% 600%; /* Larger size for smoother animation */
+    color: #e0e0e0; /* Slightly lighter text */
+    animation: backgroundShift 20s ease infinite; /* Apply animation */
+    overflow-x: hidden; /* Prevent horizontal scrollbar from floating text */
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto; /* Added top margin */
+    padding: 20px;
+    background-color: rgba(25, 25, 46, 0.8); /* Semi-transparent dark background */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 183, 255, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #56cfe1; /* Lighter blue */
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px #56cfe1;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allow wrapping */
+    font-size: 1.4rem; /* Adjusted size */
+    margin-bottom: 10px; /* Reduce margin slightly to make space for warning */
+    background-color: rgba(15, 52, 96, 0.7);
+    padding: 15px; /* Adjusted padding */
+    border-radius: 10px;
+    border: 1px solid #56cfe1;
+}
+
+.stats > div { /* Add some spacing between stat items */
+    margin: 5px 10px;
+}
+
+.stats span {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Style for the save warning */
+.save-warning {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #ffc107; /* Amber/warning color */
+    margin-bottom: 25px; /* Space before the clicker area */
+    font-style: italic;
+}
+
+.clicker-area {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#ai-clicker {
+    width: 220px;
+    height: 220px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(86, 207, 225, 0.6);
+    transition: transform 0.1s ease-out, box-shadow 0.2s ease;
+    display: block; /* Make it a block element */
+    margin: 0 auto 10px auto; /* Center it and add margin below */
+}
+
+/* Style for the change image button */
+.change-image-btn {
+    background-color: #3a5a78; /* A different blue */
+    color: #e0e0e0;
+    border: 1px solid #56cfe1;
+    padding: 5px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.2s ease;
+    margin-bottom: 10px; /* Space before the paragraph */
+}
+
+.change-image-btn:hover {
+    background-color: #4a6a88;
+}
+
+#ai-clicker:hover {
+    box-shadow: 0 0 35px rgba(86, 207, 225, 0.9);
+}
+
+.clicker-area p {
+    font-size: 1.1rem;
+    color: #adb5bd;
+}
+
+.upgrade-tabs {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.tab-btn {
+    background-color: #1f4a75; /* Darker inactive blue */
+    color: #a0d2eb;
+    border: 1px solid #48cae4;
+    padding: 10px 20px;
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 2px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-bottom: none; /* Remove bottom border for inactive */
+}
+
+.tab-btn:hover {
+    background-color: #2a628f;
+}
+
+.tab-btn.active {
+    background-color: rgba(15, 52, 96, 0.7); /* Match upgrade section bg */
+    color: #ffffff;
+    border-bottom: 1px solid rgba(15, 52, 96, 0.7); /* Blend bottom border */
+}
+
+/* Upgrade Sections Container */
+.upgrades {
+    background-color: rgba(15, 52, 96, 0.7);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #56cfe1;
+    /* margin-bottom: 25px; */ /* Remove margin-bottom here */
+    border-top-left-radius: 0; /* Flatten top left if it's the active tab content */
+    border-top-right-radius: 0; /* Flatten top right */
+}
+
+/* Hide elements with the hidden class */
+.hidden {
+    display: none;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #56cfe1; /* Match h1 */
+    text-shadow: 0 0 8px #56cfe1;
+}
+
+.upgrade-item {
+    background-color: rgba(26, 26, 46, 0.9); /* Darker item background */
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 5px solid #56cfe1;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add transitions */
+    display: flex; /* Use flexbox for better layout */
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.upgrade-item:hover {
+    background-color: rgba(36, 36, 56, 0.95); /* Slightly lighter on hover */
+    transform: translateX(5px); /* Slight shift on hover */
+}
+
+/* Animation for purchased upgrade */
+@keyframes purchaseFlash {
+    0% { background-color: #56cfe1; }
+    100% { background-color: rgba(36, 36, 56, 0.95); } /* End on hover color */
+}
+
+.upgrade-item.purchased {
+    animation: purchaseFlash 0.3s ease-out;
+}
+
+.upgrade-item div { /* Group title and description */
+    flex-basis: 60%; /* Take up most space */
+}
+
+.upgrade-item h3 {
+    margin-bottom: 5px;
+    color: #90e0ef; /* Lighter blue for title */
+}
+
+.upgrade-item p {
+    font-size: 0.9rem;
+    color: #ced4da;
+    margin-bottom: 8px;
+}
+
+.upgrade-controls { /* Container for cost, button, owned */
+    flex-basis: 35%;
+    text-align: right;
+}
+
+.upgrade-controls p { /* Cost */
+     margin-bottom: 5px;
+     font-size: 0.95rem;
+}
+
+.upgrade-controls .cost {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.buy-btn {
+    background-color: #48cae4; /* Brighter blue */
+    color: #0f1020; /* Dark text */
+    border: none;
+    padding: 8px 18px; /* Slightly more padding */
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-right: 10px;
+}
+
+.buy-btn:hover:not(:disabled) {
+    background-color: #00b4d8; /* Darker blue on hover */
+    transform: scale(1.05);
+}
+
+.buy-btn:active:not(:disabled) {
+    transform: scale(0.98); /* Click feedback */
+}
+
+.buy-btn:disabled {
+    background-color: #555;
+    color: #999;
+    cursor: not-allowed;
+    transform: none; /* Disable hover/active transforms */
+}
+
+.upgrade-controls .owned {
+    font-size: 0.9rem;
+    color: #adb5bd;
+    display: inline-block; /* Align better */
+    margin-left: 5px;
+}
+
+/* Floating text animation */
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px); /* Float upwards */
+    }
+}
+
+.floating-text {
+    position: absolute; /* Position relative to the body */
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    pointer-events: none; /* Don't interfere with clicks */
+    animation: floatUp 1s ease-out forwards; /* Apply animation */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    z-index: 1000; /* Ensure it's on top */
+}
