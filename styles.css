@@ -278,3 +278,61 @@ h2 {
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
     z-index: 1000; /* Ensure it's on top */
 }
+
+/* Rebirth Section Styling */
+.rebirth-container {
+    background-color: rgba(96, 15, 52, 0.7); /* Different background color */
+    padding: 20px;
+    margin-top: 30px; /* Space above */
+    border-radius: 10px;
+    border: 1px solid #e156a3; /* Different border color */
+    text-align: center;
+}
+
+.rebirth-container h2 {
+    color: #e156a3; /* Match border color */
+    text-shadow: 0 0 8px #e156a3;
+    margin-bottom: 10px;
+}
+
+.rebirth-container p {
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.rebirth-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #f0f0f0;
+}
+
+.rebirth-info span span { /* Target the value spans */
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.rebirth-btn {
+    background-color: #e156a3;
+    color: #101020;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.rebirth-btn:hover:not(:disabled) {
+    background-color: #c13683;
+    transform: scale(1.03);
+}
+
+.rebirth-btn:disabled {
+    background-color: #555;
+    color: #999;
+    cursor: not-allowed;
+    transform: none;
+}
